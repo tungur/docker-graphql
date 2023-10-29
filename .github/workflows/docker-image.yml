@@ -27,8 +27,8 @@ jobs:
         
     - name: Build Docker image
       run: |
-        docker build --file Dockerfile --tag tungur101/docker-graphql:0.0.2
+        docker build -t tungur101/docker-graphql:0.0.2 .
 
     - name: Push Docker image
       run: |
-        docker push --file Dockerfile --tag tungur101/docker-graphql:0.0.2
+        docker push -t tungur101/docker-graphql:0.0.2 .
