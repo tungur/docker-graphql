@@ -31,4 +31,4 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push -t tungur101/docker-graphql:0.0.2 .
+        docker push tungur101/docker-graphql:0.0.2
