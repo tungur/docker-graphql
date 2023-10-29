@@ -40,7 +40,7 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        echo "Version $NEW_VERSION!!!!!!!!!!!!!!!!!!"
+        echo "Version $NEW_VERSION !!!!!!!!!!!!!!!!!"
         docker build -t tungur101/docker-graphql:$NEW_VERSION .
         docker build -t tungur101/docker-graphql:latest .
 
@@ -48,6 +48,6 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        echo "Version $NEW_VERSION!!!!!!!!!!!!!!!!!!"
+        echo "Version $NEW_VERSION !!!!!!!!!!!!!!!!!!"
         docker push tungur101/docker-graphql:$NEW_VERSION
         docker push tungur101/docker-graphql:latest
