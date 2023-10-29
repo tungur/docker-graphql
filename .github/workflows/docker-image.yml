@@ -34,12 +34,13 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}        
       run: |        
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD        
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
     - name: Build Docker image
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
+        echo "Version $NEW_VERSION!!!!!!!!!!!!!!!!!!"
         docker build -t tungur101/docker-graphql:$NEW_VERSION .
         docker build -t tungur101/docker-graphql:latest .
 
@@ -47,5 +48,6 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
+        echo "Version $NEW_VERSION!!!!!!!!!!!!!!!!!!"
         docker push tungur101/docker-graphql:$NEW_VERSION
         docker push tungur101/docker-graphql:latest
